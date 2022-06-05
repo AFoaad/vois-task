@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	@apply h-full;
+}
+body {
+	@apply h-full;
+}
+@layer utilities {
+	.scrollbar {
+		scrollbar-color: #a1a1a1 #d8d8d8;
+		scrollbar-width: thin;
+	}
+	.scrollbar::-webkit-scrollbar {
+		width: 5px;
+	}
+	.scrollbar::-webkit-scrollbar-track {
+		background-color: #d8d8d8;
+	}
+	.scrollbar::-webkit-scrollbar-thumb {
+		background-color: #a1a1a1;
+		border-radius: 5px;
+	}
+}

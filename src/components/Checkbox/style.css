@@ -1,0 +1,30 @@
+input {
+	appearance: none;
+	background-color: #fff;
+	margin: 0;
+	font: inherit;
+	width: 1.5em;
+	height: 1.5em;
+	border-width: 0.15em;
+	border-style: solid;
+	border-radius: 50%;
+	transform: translateY(-0.075em);
+	color: var(--color);
+	border-color: var(--color);
+	display: grid;
+	place-content: center;
+}
+
+input::before {
+	content: '';
+	width: 0.5em;
+	height: 0.5em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	border-radius: 50%;
+	background-color: var(--color);
+}
+
+input:checked::before {
+	transform: scale(1);
+}
