@@ -3,7 +3,7 @@
  * Utility: `formatArrayToLists`
  *
  */
-import { lookupItemInterface } from './../interfaces/lookups'
+import { lookupItemInterface } from '../interfaces/lookups'
 import { removeDuplicatesFromArrayOfObjects } from './removeDuplicatesFromArrayOfObjects'
 import { ItemInterface } from 'interfaces/dataItem'
 

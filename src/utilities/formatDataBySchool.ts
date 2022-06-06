@@ -4,7 +4,7 @@
  *
  */
 import { generateRandomColor } from './generateRandomColor'
-import { ItemInterface, ItemsInterface } from 'interfaces/dataItem'
+import { ItemInterface, ItemsInterface } from '../interfaces/dataItem'
 
 type AccumulatorType = { count: number; items: number[] }
 /**

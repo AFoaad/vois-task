@@ -3,7 +3,7 @@
  * Utility: `sortArrayBasedOnMonth`
  *
  */
-import { ItemInterface } from 'interfaces/dataItem'
+import { ItemInterface } from '../interfaces/dataItem'
 import monthsNames from '../constants/monthsNames'
 
 /**

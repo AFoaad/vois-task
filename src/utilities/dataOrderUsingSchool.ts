@@ -3,7 +3,7 @@
  * Utility: `dataOrderUsingSchool`
  *
  */
-import { ItemInterface } from 'interfaces/dataItem'
+import { ItemInterface } from '../interfaces/dataItem'
 
 type ItemType = {
 	[key: string]: string

@@ -3,7 +3,7 @@
  * Utility: `arrayOfObjectsWithColor`
  *
  */
-import { ItemInterface } from 'interfaces/dataItem'
+import { ItemInterface } from '../interfaces/dataItem'
 import { generateRandomColor } from './generateRandomColor'
 
 /**

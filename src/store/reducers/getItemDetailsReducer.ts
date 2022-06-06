@@ -12,27 +12,27 @@ export const GET_DETAILS = 'GET_DETAILS'
 export const GET_DETAILS_FINISHED = 'GET_DETAILS_FINISHED'
 export const ITEM_DETAILS_RESET = 'ITEM_DETAILS_RESET'
 
-interface initStateInterface {
+interface InitStateInterface {
 	loading: boolean
 	item: ItemInterface
 }
 
-const initState = {
+const initState: InitStateInterface = {
 	loading: false,
 	item: {},
 }
 
-interface getLookupsStartedAction extends Action<typeof GET_DETAILS_STARTED> {
+interface GetLookupsStartedAction extends Action<typeof GET_DETAILS_STARTED> {
 	type: typeof GET_DETAILS_STARTED
 }
-interface getLookupsFinishedAction extends Action<typeof GET_DETAILS_FINISHED> {
+interface GetLookupsFinishedAction extends Action<typeof GET_DETAILS_FINISHED> {
 	type: typeof GET_DETAILS_FINISHED
 }
-interface getItemRestAction extends Action<typeof ITEM_DETAILS_RESET> {
+interface GetItemRestAction extends Action<typeof ITEM_DETAILS_RESET> {
 	type: typeof ITEM_DETAILS_RESET
 }
 
-interface getLookupsAction extends Action<typeof GET_DETAILS> {
+interface GetLookupsAction extends Action<typeof GET_DETAILS> {
 	type: typeof GET_DETAILS
 	payload: {
 		data: ItemInterface
@@ -40,12 +40,12 @@ interface getLookupsAction extends Action<typeof GET_DETAILS> {
 }
 
 type LookupsActions =
-	| getLookupsStartedAction
-	| getLookupsAction
-	| getLookupsFinishedAction
-	| getItemRestAction
+	| GetLookupsStartedAction
+	| GetLookupsAction
+	| GetLookupsFinishedAction
+	| GetItemRestAction
 
-const getItemDetailsReducer: Reducer<initStateInterface, LookupsActions> = (
+const getItemDetailsReducer: Reducer<InitStateInterface, LookupsActions> = (
 	state = initState,
 	action: LookupsActions
 ) => {

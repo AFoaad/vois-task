@@ -11,12 +11,12 @@ export const GET_LOOKUPS_STARTED = 'GET_LOOKUPS_STARTED'
 export const GET_LOOKUPS = 'GET_LOOKUPS'
 export const GET_LOOKUPS_FINISHED = 'GET_LOOKUPS_FINISHED'
 
-interface initStateInterface {
+interface InitStateInterface {
 	lookupsLists: lookupsListsInterface
 	loading: boolean
 }
 
-const initState: initStateInterface = {
+const initState: InitStateInterface = {
 	lookupsLists: {
 		camps: [],
 		schools: [],
@@ -25,14 +25,14 @@ const initState: initStateInterface = {
 	loading: false,
 }
 
-interface getLookupsStartedAction extends Action<typeof GET_LOOKUPS_STARTED> {
+interface GetLookupsStartedAction extends Action<typeof GET_LOOKUPS_STARTED> {
 	type: typeof GET_LOOKUPS_STARTED
 }
-interface getLookupsFinishedAction extends Action<typeof GET_LOOKUPS_FINISHED> {
+interface GetLookupsFinishedAction extends Action<typeof GET_LOOKUPS_FINISHED> {
 	type: typeof GET_LOOKUPS_FINISHED
 }
 
-interface getLookupsAction extends Action<typeof GET_LOOKUPS> {
+interface GetLookupsAction extends Action<typeof GET_LOOKUPS> {
 	type: typeof GET_LOOKUPS
 	payload: {
 		data: lookupsListsInterface
@@ -40,11 +40,11 @@ interface getLookupsAction extends Action<typeof GET_LOOKUPS> {
 }
 
 type LookupsActions =
-	| getLookupsStartedAction
-	| getLookupsAction
-	| getLookupsFinishedAction
+	| GetLookupsStartedAction
+	| GetLookupsAction
+	| GetLookupsFinishedAction
 
-const getLookupsReducer: Reducer<initStateInterface, LookupsActions> = (
+const getLookupsReducer: Reducer<InitStateInterface, LookupsActions> = (
 	state = initState,
 	action: LookupsActions
 ) => {
