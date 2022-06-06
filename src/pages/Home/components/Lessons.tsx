@@ -1,3 +1,8 @@
+/**
+ *
+ * Component: `Lessons`
+ *
+ */
 import React, { FC, memo, useMemo, useCallback } from 'react'
 import Checkbox from '../../../components/Checkbox'
 import { useAppSelector } from '../../../hooks/useAppSelector'

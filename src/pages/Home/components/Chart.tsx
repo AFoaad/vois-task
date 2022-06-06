@@ -1,3 +1,8 @@
+/**
+ *
+ * Component: `Chart`
+ *
+ */
 import { Chart as ChartJS, registerables } from 'chart.js'
 import { FC, useCallback, useMemo, useRef } from 'react'
 import { getElementAtEvent, Line } from 'react-chartjs-2'
