@@ -4,6 +4,7 @@
  *
  */
 import { useEffect } from 'react'
+import { shallowEqual } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getItemDetails } from '../../store/actions/getItemDetails'
 import { ITEM_DETAILS_RESET } from '../../store/reducers/getItemDetailsReducer'
@@ -15,7 +16,7 @@ type PageParamsType = { id: string }
 const DetailsPage = () => {
 	const { id } = useParams() as PageParamsType
 	const dispatch = useAppDispatch()
-	const { item } = useAppSelector(({ getItemDetails }) => getItemDetails)
+	const { item } = useAppSelector(({ getItemDetails }) => getItemDetails, shallowEqual)
 
 	useEffect(() => {
 		dispatch(getItemDetails(id))

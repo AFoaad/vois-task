@@ -3,20 +3,18 @@
  * Component: `Checkbox`.
  *
  */
-import { memo, useMemo } from 'react'
+import { FC, memo, useMemo } from 'react'
 import './style.css'
 import { RadioInputProps } from './index.interface'
 
-const Checkbox = ({
+const Checkbox:FC<RadioInputProps> = ({
 	count,
 	title,
 	checked,
 	color,
 	...props
-}: RadioInputProps) => {
-	const colorToApply = checked ? color : 'rgba(255,255,255,0.4)'
-
-	const colorStyle = useMemo(() => ({ color: colorToApply }), [colorToApply])
+}) => {
+	const colorStyle = useMemo(() => ({ color: checked ? color : '#75717166' }), [checked])
 
 	return (
 		<div className="flex items-center m-5">

@@ -32,7 +32,7 @@ const HomePage = () => {
 		school: StringParam,
 	})
 
-	const { lookupsLists } = useAppSelector((state) => state.getLookups)
+	const { lookupsLists } = useAppSelector((state) => state.getLookups, shallowEqual)
 	const { loading } = useAppSelector((state) => state.getList, shallowEqual)
 
 	useEffect(() => {

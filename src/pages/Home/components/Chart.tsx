@@ -7,6 +7,7 @@ import { Chart as ChartJS, registerables } from 'chart.js'
 import { FC, useCallback, useMemo, useRef } from 'react'
 import { getElementAtEvent, Line } from 'react-chartjs-2'
 import { useHistory } from 'react-router-dom'
+import { shallowEqual } from 'react-redux'
 import { ItemInterface, MappedItemType } from '../../../interfaces/dataItem'
 import monthsNames from '../../../constants/monthsNames'
 import { useAppSelector } from '../../../hooks/useAppSelector'
@@ -20,7 +21,7 @@ interface IPros {
 
 const Chart: FC<IPros> = ({ selectedSchools }): JSX.Element => {
 	const { push } = useHistory()
-	const { items } = useAppSelector(({ getList }) => getList)
+	const { items } = useAppSelector(({ getList }) => getList, shallowEqual)
 	const chartRef = useRef<ChartJS<'line', number[], string>>(null)
 
 	const datasets = useMemo(() => {

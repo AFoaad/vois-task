@@ -4,9 +4,9 @@
  *
  */
 import React, { FC, memo, useMemo, useCallback } from 'react'
+import { shallowEqual } from 'react-redux'
 import Checkbox from '../../../components/Checkbox'
 import { useAppSelector } from '../../../hooks/useAppSelector'
-import { MappedItemType } from '../../../interfaces/dataItem'
 
 interface Props {
 	country: string | null | undefined
@@ -19,7 +19,8 @@ const Lessons: FC<Props> = ({
 	setSelectedSchools,
 	selectedSchools,
 }): JSX.Element => {
-	const { items } = useAppSelector(({ getList }) => getList)
+	const { items } = useAppSelector(({ getList }) => getList, shallowEqual)
+	console.log(items)
 
 	const lessonsCount = useMemo(
 		() => items.reduce((acc, item) => acc + item.lessonsCount, 0),
@@ -59,7 +60,7 @@ const Lessons: FC<Props> = ({
 				) : null}
 			</div>
 			<div className="h-96 mt-10 overflow-y-scroll scrollbar">
-				{items.map((item: MappedItemType) => (
+				{items.map((item) => (
 					<Checkbox
 						onChange={onChange}
 						title={item.school as string}
@@ -69,7 +70,8 @@ const Lessons: FC<Props> = ({
 						count={item.lessonsCount}
 						checked={selectedSchools.includes(item.school as string)}
 					/>
-				))}
+					)
+				)}
 			</div>
 		</div>
 	)
