@@ -20,7 +20,6 @@ const Lessons: FC<Props> = ({
 	selectedSchools,
 }): JSX.Element => {
 	const { items } = useAppSelector(({ getList }) => getList, shallowEqual)
-	console.log(items)
 
 	const lessonsCount = useMemo(
 		() => items.reduce((acc, item) => acc + item.lessonsCount, 0),

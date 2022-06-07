@@ -34,7 +34,7 @@ export const getList = (query: QueryType<string>) => {
 				},
 			})
 		} catch (error) {
-			console.log(error)
+			return false
 		}
 	}
 }
