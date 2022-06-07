@@ -3,7 +3,7 @@
  * Component: `Lessons`
  *
  */
-import React, { FC, memo, useMemo, useCallback } from 'react'
+import React, { FC, memo, useMemo, useCallback, useEffect } from 'react'
 import { shallowEqual } from 'react-redux'
 import Checkbox from '../../../components/Checkbox'
 import { useAppSelector } from '../../../hooks/useAppSelector'
@@ -25,6 +25,16 @@ const Lessons: FC<Props> = ({
 		() => items.reduce((acc, item) => acc + item.lessonsCount, 0),
 		[items]
 	)
+
+	const setItemsCheckedInitial = useCallback(
+		()=> {
+			setSelectedSchools(items.map(item => item.school))
+		},[setSelectedSchools, items]
+	)
+
+	useEffect(() =>{
+		setItemsCheckedInitial()
+	},[items])
 
 	const onChange = useCallback(
 		(e: React.ChangeEvent<HTMLInputElement>) => {

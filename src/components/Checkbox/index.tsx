@@ -23,6 +23,7 @@ const Checkbox:FC<RadioInputProps> = ({
 					{...props}
 					type="checkbox"
 					className={'form-radio appearance-checkbox mr-2'}
+					checked={checked}
 					name={title}
 					style={{
 						...colorStyle,
