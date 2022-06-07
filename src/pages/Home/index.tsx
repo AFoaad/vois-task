@@ -25,7 +25,7 @@ const initialQueryValues = {
 
 const HomePage = () => {
 	const dispatch = useAppDispatch()
-
+	const [selectedSchools, setSelectedSchools] = useState<string[]>([])
 	const [query = initialQueryValues, setQuery] = useQueryParams({
 		country: StringParam,
 		camp: StringParam,
@@ -37,12 +37,11 @@ const HomePage = () => {
 
 	useEffect(() => {
 		setQuery(initialQueryValues)
-		dispatch(getLookups())
 	}, [])
 
 	useEffect(() => {
-		setSelectedSchools([])
 		dispatch(getList(query))
+		dispatch(getLookups(query))
 	}, [query])
 
 	const onSelectChange = useCallback(
@@ -52,7 +51,6 @@ const HomePage = () => {
 		[setQuery]
 	)
 
-	const [selectedSchools, setSelectedSchools] = useState<string[]>([])
 
 	const renderChartData = useMemo(() => {
 		if (loading) {
